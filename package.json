@@ -2,9 +2,10 @@
   "devDependencies": {
     "bower": "",
     "grunt": "",
-    "load-grunt-tasks": "",
+    "grunt-contrib-jshint": "",
+    "grunt-contrib-qunit": "",
     "grunt-contrib-watch": "",
     "grunt-newer": "",
-    "grunt-contrib-jshint": ""
+    "load-grunt-tasks": ""
   }
 }

@@ -12,6 +12,9 @@ module.exports = (grunt) ->
                     'static/js/**/*.js'
                 ]
 
+        qunit:
+            all: ['static/test/**/*.html']
+
         watch:
             jshint:
                 files: [
