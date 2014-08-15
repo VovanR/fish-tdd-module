@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "bower": "",
+    "grunt": "",
+    "load-grunt-tasks": "",
+    "grunt-contrib-watch": "",
+    "grunt-newer": "",
+    "grunt-contrib-jshint": ""
+  }
+}
