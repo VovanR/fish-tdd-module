@@ -5,9 +5,11 @@
 define([
     'jquery',
     '../modules/foo',
+    '../modules/bar',
 ], function (
     $,
-    Foo
+    Foo,
+    Bar
 ) {
 
     var App;
@@ -30,6 +32,9 @@ define([
 
             var input = $('#foo-name');
             input.val(this.Foo.getName());
+
+            this.Bar = new Bar();
+            $('#bar-name').val(this.Bar.getName());
         },
     };
 
