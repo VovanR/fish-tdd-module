@@ -13,10 +13,13 @@ module.exports = (grunt) ->
                     'static/test/**/*.js',
                 ]
 
+        # grunt qunit (run all tests)
+        # grunt qunit --test foo (run `foo` test)
         qunit:
-            all: [
-                'static/test/**/*.html',
-            ]
+            all:
+                src: [
+                    'static/test/**/' + (grunt.option('test') or '*') + '-test.html',
+                ]
 
         watch:
             jshint:
