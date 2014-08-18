@@ -12,6 +12,28 @@ module.exports = (grunt) ->
                     'static/js/**/*.js',
                     'static/test/**/*.js',
                 ]
+                options:
+                    reporter: require('jshint-stylish')
+                    curly: true
+                    eqeqeq: true
+                    freeze: true
+                    latedef: true
+                    newcap: true
+                    nonbsp: true
+                    nonew: true
+                    plusplus: false
+                    quotmark: 'single'
+                    undef: true
+                    browser: true
+                    globals:
+                        jQuery: true
+                        define: true
+                        console: true
+                        require: true
+                        requirejs: true
+                        QUnit: true
+                        test: true
+                        equal: true
 
         # grunt qunit (run all tests)
         # grunt qunit --test foo (run `foo` test)
