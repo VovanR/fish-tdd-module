@@ -63,13 +63,6 @@ module.exports = (grunt) ->
                 ]
                 tasks: 'newer:jscs:all'
 
-            qunit:
-                files: [
-                    'static/test/**/*.js',
-                    'static/test/**/*.html',
-                ]
-                tasks: 'qunit:all'
-
     grunt.registerTask 'lint', ['jshint', 'jscs']
     grunt.registerTask 'test', ['qunit']
     grunt.registerTask 'default', ['lint', 'watch']
