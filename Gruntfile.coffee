@@ -32,8 +32,6 @@ module.exports = (grunt) ->
                         require: true
                         requirejs: true
                         QUnit: true
-                        test: true
-                        equal: true
 
         # grunt qunit (run all tests)
         # grunt qunit --test foo (run `foo` test)
