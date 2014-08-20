@@ -8,7 +8,6 @@ define([
 
     var Foo;
 
-
     /**
      * Foo module
      *
@@ -28,7 +27,6 @@ define([
             return this.name;
         },
     };
-
 
     return Foo;
 

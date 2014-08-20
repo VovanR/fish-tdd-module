@@ -8,7 +8,6 @@ define([
 
     var Bar;
 
-
     /**
      * Bar module
      *
@@ -27,8 +26,16 @@ define([
         getName: function () {
             return this.name;
         },
-    };
 
+        /**
+         * Set module name
+         *
+         * @param {String} name
+         */
+        setName: function (name) {
+            this.name = name;
+        },
+    };
 
     return Bar;
 

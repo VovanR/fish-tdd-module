@@ -1,6 +1,6 @@
 requirejs([
     '../js/modules/bar',
-], function(
+], function (
     Bar
 ) {
 
@@ -8,10 +8,13 @@ requirejs([
 
     QUnit.start();
 
-    test('Bar module', function () {
+    QUnit.test('Bar module', function (assert) {
         var bar = new Bar();
 
-        equal(bar.getName(), 'Bar', 'Module name is Bar');
+        assert.equal(bar.getName(), 'Bar', 'Module name is Bar');
+
+        bar.setName('Lol');
+        assert.equal(bar.getName(), 'Lol', 'Set name');
     });
 
 });

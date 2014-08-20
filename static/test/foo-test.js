@@ -1,6 +1,6 @@
 requirejs([
     '../js/modules/foo',
-], function(
+], function (
     Foo
 ) {
 
@@ -8,10 +8,10 @@ requirejs([
 
     QUnit.start();
 
-    test('Foo module', function () {
+    QUnit.test('Foo module', function (assert) {
         var foo = new Foo();
 
-        equal(foo.getName(), 'Foo', 'Module name is Foo');
+        assert.equal(foo.getName(), 'Foo', 'Module name is Foo');
     });
 
 });

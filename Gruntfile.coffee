@@ -33,6 +33,13 @@ module.exports = (grunt) ->
                         requirejs: true
                         QUnit: true
 
+        jscs:
+            all:
+                src: [
+                    'static/js/**/*.js',
+                    'static/test/**/*.js',
+                ]
+
         # grunt qunit (run all tests)
         # grunt qunit --test foo (run `foo` test)
         qunit:
@@ -49,6 +56,13 @@ module.exports = (grunt) ->
                 ]
                 tasks: 'newer:jshint:all'
 
+            jscs:
+                files: [
+                    'static/js/**/*.js',
+                    'static/test/**/*.js',
+                ]
+                tasks: 'newer:jscs:all'
+
             qunit:
                 files: [
                     'static/test/**/*.js',
@@ -56,4 +70,6 @@ module.exports = (grunt) ->
                 ]
                 tasks: 'qunit:all'
 
-    grunt.registerTask 'default', ['jshint', 'watch']
+    grunt.registerTask 'lint', ['jshint', 'jscs']
+    grunt.registerTask 'test', ['qunit']
+    grunt.registerTask 'default', ['lint', 'watch']
