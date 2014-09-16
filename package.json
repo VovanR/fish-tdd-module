@@ -1,15 +1,11 @@
 {
   "devDependencies": {
     "bower": "",
-    "grunt": "",
-    "grunt-contrib-jshint": "",
-    "grunt-contrib-qunit": "",
-    "grunt-contrib-watch": "",
-    "grunt-jscs": "",
-    "grunt-newer": "",
+    "gulp": "",
+    "gulp-jscs": "",
+    "gulp-jshint": "",
     "jscs": "",
     "jscs-jsdoc": "",
-    "jshint-stylish": "",
-    "load-grunt-tasks": ""
+    "jshint-stylish": ""
   }
 }
