@@ -4,6 +4,7 @@
     "gulp": "",
     "gulp-jscs": "",
     "gulp-jshint": "",
+    "gulp-notify": "",
     "jscs": "",
     "jscs-jsdoc": "",
     "jshint-stylish": ""

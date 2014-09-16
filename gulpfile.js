@@ -1,27 +1,37 @@
 // See: http://gulpjs.com/
 
 var gulp = require('gulp');
+var notify = require('gulp-notify');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 
+var changedFile = null;
+
 gulp.task('lint', function () {
-    return gulp.src([
-            './static/js/**/*.js',
-            './static/test/**/*.js',
-        ])
+    return gulp.src(changedFile || ['./static/js/**/*.js', './static/test/**/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(notify(function (file) {
+            if (file.jshint.success) {
+                return false;
+            }
+
+            var errors = file.jshint.results.map(function (data) {
+                if (data.error) {
+                    return '(' + data.error.line + ':' + data.error.character + ') ' + data.error.reason;
+                }
+            }).join('\n');
+
+            return file.relative + ' (' + file.jshint.results.length + ' errors)\n' + errors;
+        }))
         .pipe(jscs());
 });
 
 gulp.task('watch', function () {
-    gulp.watch([
-            './static/js/**/*.js',
-            './static/test/**/*.js',
-        ],
-        [
-            'lint',
-        ]);
+    gulp.watch(['./static/js/**/*.js', './static/test/**/*.js'], function (e) {
+            changedFile = e.path;
+            gulp.run('lint');
+        });
 });
 
-gulp.task('default', ['lint', 'watch']);
+gulp.task('default', ['lint']);
