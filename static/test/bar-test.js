@@ -8,13 +8,33 @@ requirejs([
 
     QUnit.start();
 
-    QUnit.test('Bar module', function (assert) {
-        var bar = new Bar();
+    QUnit.module('Bar module', {
+        setup: function () {
+            this.m = new Bar();
+        },
+        teardown: function () {
+        }
+    });
 
-        assert.equal(bar.getName(), 'Bar', 'Module name is Bar');
+    QUnit.test('Should initialize', function (assert) {
+        var m = this.m;
 
-        bar.setName('Lol');
-        assert.equal(bar.getName(), 'Lol', 'Set name');
+        assert.ok(m);
+    });
+
+    QUnit.test('`getName` should return name', function (assert) {
+        var m = this.m;
+
+        assert.equal(m.getName(), 'Bar');
+    });
+
+    QUnit.test('`setName` should change name', function (assert) {
+        var m = this.m;
+
+        assert.equal(m.getName(), 'Bar', 'Module name is Bar');
+
+        m.setName('Lol');
+        assert.equal(m.getName(), 'Lol', 'Set name');
     });
 
 });

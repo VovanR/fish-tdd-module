@@ -8,10 +8,24 @@ requirejs([
 
     QUnit.start();
 
-    QUnit.test('Foo module', function (assert) {
-        var foo = new Foo();
+    QUnit.module('Foo module', {
+        setup: function () {
+            this.m = new Foo();
+        },
+        teardown: function () {
+        }
+    });
 
-        assert.equal(foo.getName(), 'Foo', 'Module name is Foo');
+    QUnit.test('Should initialize', function (assert) {
+        var m = this.m;
+
+        assert.ok(m);
+    });
+
+    QUnit.test('`getName` should return name', function (assert) {
+        var m = this.m;
+
+        assert.equal(m.getName(), 'Foo');
     });
 
 });
