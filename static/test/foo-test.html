@@ -2,20 +2,26 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>foo</title>
 
-        <link rel="stylesheet" href="../vendor/qunit/qunit/qunit.css" media="screen">
-        <script src="../vendor/qunit/qunit/qunit.js"></script>
-        <script src="../vendor/requirejs/require.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../vendor/mocha/mocha.css">
     </head>
     <body>
-        <div id="qunit"></div>
-        <div id="qunit-fixture">this had better work.</div>
+        <div id="mocha">
+            <p><a href=".">Index</a></p>
+        </div>
 
+        <div id="messages"></div>
+
+        <div id="fixtures">
+        </div>
+
+
+        <script src="../vendor/mocha/mocha.js"></script>
+        <script src="../vendor/requirejs/require.js"></script>
         <script>
-        // Defer Qunit so RequireJS can work its magic and resolve all modules.
-        QUnit.config.autostart = false;
-
         requirejs.config.baseUrl = '../js/';
         requirejs(['../js/common'], function (common) {
             requirejs(['../test/foo-test']);

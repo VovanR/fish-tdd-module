@@ -1,9 +1,11 @@
 // See: http://gulpjs.com/
+'use strict';
 
 var gulp = require('gulp');
 var notify = require('gulp-notify');
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
+var mochaPhantomJS = require('gulp-mocha-phantomjs');
 
 var changedFile = null;
 
@@ -25,6 +27,12 @@ gulp.task('lint', function () {
             return file.relative + ' (' + file.jshint.results.length + ' errors)\n' + errors;
         }))
         .pipe(jscs());
+});
+
+gulp.task('test', function () {
+    return gulp
+        .src('./static/test/**/*-test.html')
+        .pipe(mochaPhantomJS({ reporter: 'spec' }));
 });
 
 gulp.task('watch', function () {

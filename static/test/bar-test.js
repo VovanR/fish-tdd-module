@@ -1,40 +1,55 @@
 requirejs([
+    '../vendor/chai/chai',
     '../js/modules/bar',
 ], function (
+    chai,
     Bar
 ) {
 
     'use strict';
 
-    QUnit.start();
+    mocha.setup('bdd');
+    var assert = chai.assert;
 
-    QUnit.module('Bar module', {
-        setup: function () {
-            this.m = new Bar();
-        },
-        teardown: function () {
-        }
+    describe('Bar', function () {
+        var module = function () {
+            return new Bar();
+        };
+
+        beforeEach(function () {
+        });
+
+        afterEach(function () {
+        });
+
+        describe('constructor', function () {
+            it('should initialize', function () {
+                var m = module();
+                assert.isDefined(m);
+            });
+        });
+
+        describe('#getName', function () {
+            it('should return name', function () {
+                var m = module();
+                assert.equal(m.getName(), 'Bar');
+            });
+        });
+
+        describe('#setName', function () {
+            it('should change name', function () {
+                var m = module();
+                assert.equal(m.getName(), 'Bar');
+                m.setName('Lol');
+                assert.equal(m.getName(), 'Lol');
+            });
+        });
     });
 
-    QUnit.test('Should initialize', function (assert) {
-        var m = this.m;
-
-        assert.ok(m);
-    });
-
-    QUnit.test('`getName` should return name', function (assert) {
-        var m = this.m;
-
-        assert.equal(m.getName(), 'Bar');
-    });
-
-    QUnit.test('`setName` should change name', function (assert) {
-        var m = this.m;
-
-        assert.equal(m.getName(), 'Bar', 'Module name is Bar');
-
-        m.setName('Lol');
-        assert.equal(m.getName(), 'Lol', 'Set name');
-    });
+    if (window.mochaPhantomJS) {
+        mochaPhantomJS.run();
+    } else {
+        mocha.run();
+    }
 
 });
