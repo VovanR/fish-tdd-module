@@ -1,9 +1,9 @@
 {
-  "name": "test-fish-qunit",
+  "name": "fish-tdd-module",
   "version": "0.0.0",
-  "homepage": "https://github.com/VovanR/test-fish-qunit",
+  "homepage": "https://github.com/VovanR/fish-tdd-module",
   "license": "MIT",
-  "repository": "VovanR/test-fish-qunit",
+  "repository": "VovanR/fish-tdd-module",
   "author": {
     "name": "VovanR",
     "url": "http://vovanr.com/"

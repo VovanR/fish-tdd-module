@@ -1,5 +1,5 @@
 {
-  "name": "test-fish-qunit",
+  "name": "fish-tdd-module",
   "version": "0.0.0",
   "dependencies": {
     "html5-boilerplate": "~4.3.0",

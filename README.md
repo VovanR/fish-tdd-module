@@ -1,2 +1,2 @@
-test-fish-qunit
+fish-tdd-module
 ===============
