@@ -6,6 +6,8 @@ define([
 ], function (
 ) {
 
+    'use strict';
+
     var Foo;
 
     /**
@@ -14,7 +16,7 @@ define([
      * @constructor
      */
     Foo = function () {
-        this.name = 'Foo';
+        this._name = 'Foo';
     };
 
     Foo.prototype = {
@@ -24,7 +26,7 @@ define([
          * @returns {String} name
          */
         getName: function () {
-            return this.name;
+            return this._name;
         },
     };
 

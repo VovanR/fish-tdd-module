@@ -6,6 +6,8 @@ define([
 ], function (
 ) {
 
+    'use strict';
+
     var Bar;
 
     /**
@@ -14,7 +16,7 @@ define([
      * @constructor
      */
     Bar = function () {
-        this.name = 'Bar';
+        this._name = 'Bar';
     };
 
     Bar.prototype = {
@@ -24,7 +26,7 @@ define([
          * @returns {String} name
          */
         getName: function () {
-            return this.name;
+            return this._name;
         },
 
         /**
@@ -33,7 +35,7 @@ define([
          * @param {String} name
          */
         setName: function (name) {
-            this.name = name;
+            this._name = name;
         },
     };
 
