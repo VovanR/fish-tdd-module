@@ -1,8 +1,10 @@
 requirejs([
     '../vendor/chai/chai',
+    'jquery',
     '../js/modules/bar',
 ], function (
     chai,
+    $,
     Bar
 ) {
 
@@ -16,7 +18,12 @@ requirejs([
             return new Bar();
         };
 
+        var _bFixtureTemplate = $('#fixture-template');
+        var _fixtureTemplate = _bFixtureTemplate.html();
+        _bFixtureTemplate.empty();
+
         beforeEach(function () {
+            $('#fixtures').html(_fixtureTemplate);
         });
 
         afterEach(function () {
