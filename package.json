@@ -16,6 +16,7 @@
     "gulp-mocha-phantomjs": "",
     "jscs": "",
     "jscs-jsdoc": "",
-    "jshint-stylish": ""
+    "jshint-stylish": "",
+    "yargs": ""
   }
 }
