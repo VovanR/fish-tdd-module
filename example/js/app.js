@@ -4,12 +4,10 @@
 
 define([
     'jquery',
-    '../modules/foo',
-    '../modules/bar',
+    '../../index',
 ], function (
     $,
-    Foo,
-    Bar
+    Foo
 ) {
 
     var App;
@@ -31,9 +29,6 @@ define([
 
             var input = $('#foo-name');
             input.val(this.Foo.getName());
-
-            this.Bar = new Bar();
-            $('#bar-name').val(this.Bar.getName());
         },
     };
 

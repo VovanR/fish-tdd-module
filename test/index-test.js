@@ -1,7 +1,7 @@
 requirejs([
     '../vendor/chai/chai',
     'jquery',
-    '../js/modules/foo',
+    '../index',
 ], function (
     chai,
     $,
