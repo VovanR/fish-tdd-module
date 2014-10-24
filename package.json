@@ -17,5 +17,8 @@
     "jscs": "",
     "jscs-jsdoc": "",
     "jshint-stylish": ""
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install"
   }
 }
