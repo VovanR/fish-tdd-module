@@ -19,7 +19,7 @@ npm run test
 
 *In browser*
 ```sh
-open ./text/fish-tdd-module-test.html
+open ./text/index-test.html
 ```
 
 ### Lint
