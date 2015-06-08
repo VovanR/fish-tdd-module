@@ -1,11 +1,15 @@
 requirejs([
-    '../vendor/chai/chai',
     'jquery',
+    'chai',
+    'sinon',
+    'lodash',
     '../index',
 ], function (
-    chai,
     $,
-    Foo
+    chai,
+    sinon,
+    _,
+    FishTddModule
 ) {
 
     'use strict';
@@ -13,9 +17,19 @@ requirejs([
     mocha.setup('bdd');
     var assert = chai.assert;
 
-    describe('Foo', function () {
-        var module = function () {
-            return new Foo();
+    describe('FishTddModule', function () {
+        /**
+         */
+        var module = function (o) {
+            var $fixtures = $('#fixtures');
+
+            o = _.defaults(
+                o || {},
+                {
+                }
+            );
+
+            return new FishTddModule(o);
         };
 
         var _bFixtureTemplate = $('#fixture-template');
@@ -30,16 +44,18 @@ requirejs([
         });
 
         describe('constructor', function () {
-            it('should initialize', function () {
-                var m = module();
-                assert.isDefined(m);
-            });
         });
 
-        describe('#getName', function () {
-            it('should return name', function () {
+        describe('_init', function () {
+        });
+
+        describe('_bindControls', function () {
+        });
+
+        describe('#destroy', function () {
+            it('should be a `Function`', function () {
                 var m = module();
-                assert.equal(m.getName(), 'Foo');
+                assert.isFunction(m.destroy);
             });
         });
     });

@@ -1,14 +1,18 @@
 /**
- * @author VovanR <mail@vovanr.com>
+ * @author Vladimir Rodkin <mail@vovanr.com>
  */
 
 define([
     'jquery',
     '../../index',
+
+    // nothing returns
 ], function (
     $,
     Foo
 ) {
+
+    'use strict';
 
     var App;
 
@@ -26,9 +30,6 @@ define([
             console.info('App init');
 
             this.Foo = new Foo();
-
-            var input = $('#foo-name');
-            input.val(this.Foo.getName());
         },
     };
 

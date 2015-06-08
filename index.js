@@ -1,35 +1,57 @@
 /**
- * @author VovanR <mail@vovanr.com>
+ * @module FishTddModule
+ * @author Vladimir Rodkin <mail@vovanr.com>
  */
 
 define([
+    'jquery',
+
+    // nothing returns
 ], function (
+    $
 ) {
 
     'use strict';
 
-    var Foo;
+    var FishTddModule;
 
     /**
-     * Foo module
-     *
+     * @param {Object} [o] Options
      * @constructor
+     * @alias module:FishTddModule
      */
-    Foo = function () {
-        this._name = 'Foo';
+    FishTddModule = function (o) {
+
+        this._init();
     };
 
-    Foo.prototype = {
+    FishTddModule.prototype = {
         /**
-         * Returns module name
+         * Initialize
          *
-         * @returns {String} name
+         * @private
          */
-        getName: function () {
-            return this._name;
+        _init: function () {
+            console.info('FishTddModule init');
+
+            this._bindControls();
+        },
+
+        /**
+         * Bindings
+         *
+         * @private
+         */
+        _bindControls: function () {
+        },
+
+        /**
+         */
+        destroy: function () {
+            console.log('destroy');
         },
     };
 
-    return Foo;
+    return FishTddModule;
 
 });
