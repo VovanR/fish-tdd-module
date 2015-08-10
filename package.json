@@ -4,7 +4,7 @@
   "author": "Vladimir Rodkin <mail@vovanr.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.comVovanR/fish-tdd-module"
+    "url": "https://github.com/VovanR/fish-tdd-module"
   },
   "scripts": {
     "prepush": "npm test; npm run lint",
